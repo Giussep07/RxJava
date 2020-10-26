@@ -18,7 +18,88 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.giussepr.rxjava.ui.splash.home.HomeFragment"
+        android:name="com.giussepr.rxjava.ui.home.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_homeFragment_to_introductionFragment"
+            app:destination="@id/introductionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_disposableFragment"
+            app:destination="@id/disposableFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_compositeDisposableFragment"
+            app:destination="@id/compositeDisposableFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_operatorsFragment"
+            app:destination="@id/operatorsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_typesObservablesFragment"
+            app:destination="@id/typesObservablesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_busFragment"
+            app:destination="@id/busFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rxBindingFragment"
+            app:destination="@id/rxBindingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_backPressureFragment"
+            app:destination="@id/backPressureFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_hotAndColdFragment"
+            app:destination="@id/hotAndColdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/introductionFragment"
+        android:name="com.giussepr.rxjava.ui.introduction.IntroductionFragment"
+        android:label="Introduction"
+        tools:layout="@layout/fragment_introduction" />
+    <fragment
+        android:id="@+id/disposableFragment"
+        android:name="com.giussepr.rxjava.ui.disposable.DisposableFragment"
+        android:label="Disposable"
+        tools:layout="@layout/disposable_fragment" />
+    <fragment
+        android:id="@+id/compositeDisposableFragment"
+        android:name="com.giussepr.rxjava.ui.compositeDisposable.CompositeDisposableFragment"
+        android:label="CompositeDisposable"
+        tools:layout="@layout/composite_disposable_fragment" />
+    <fragment
+        android:id="@+id/operatorsFragment"
+        android:name="com.giussepr.rxjava.ui.operators.OperatorsFragment"
+        android:label="Operators"
+        tools:layout="@layout/operators_fragment" />
+    <fragment
+        android:id="@+id/typesObservablesFragment"
+        android:name="com.giussepr.rxjava.ui.typesObservables.TypesObservablesFragment"
+        android:label="Types of Observable"
+        tools:layout="@layout/types_observables_fragment" />
+    <fragment
+        android:id="@+id/subjectFragment"
+        android:name="com.giussepr.rxjava.ui.subject.SubjectFragment"
+        android:label="Subject"
+        tools:layout="@layout/subject_fragment" />
+    <fragment
+        android:id="@+id/busFragment"
+        android:name="com.giussepr.rxjava.ui.bus.BusFragment"
+        android:label="Bus"
+        tools:layout="@layout/bus_fragment" />
+    <fragment
+        android:id="@+id/rxBindingFragment"
+        android:name="com.giussepr.rxjava.ui.rxBinding.RxBindingFragment"
+        android:label="RxBinding"
+        tools:layout="@layout/rx_binding_fragment" />
+    <fragment
+        android:id="@+id/backPressureFragment"
+        tools:layout="@layout/back_pressure_fragment"
+        android:name="com.giussepr.rxjava.ui.backPressure.BackPressureFragment"
+        android:label="Backpressure" />
+    <fragment
+        android:id="@+id/hotAndColdFragment"
+        android:name="com.giussepr.rxjava.ui.hotAndCold.HotAndColdFragment"
+        android:label="Hot and Cold"
+        tools:layout="@layout/hot_and_cold_fragment" />
 </navigation>

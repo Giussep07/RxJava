@@ -1,7 +1,8 @@
 package com.giussepr.rxjava
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
@@ -9,12 +10,17 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.giussepr.rxjava.databinding.ActivityMainBinding
+import com.giussepr.rxjava.ui.bus.RxBus
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    private val compositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +42,13 @@ class MainActivity : AppCompatActivity() {
         )
 
         setupDestinationChangedListener()
+
+        compositeDisposable.add(RxBus.listen(String::class.java)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+            }
+        )
     }
 
     private fun setupDestinationChangedListener() {
@@ -49,5 +62,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun changeToolbarVisibility(isVisible: Boolean) {
         binding.materialToolbar.isVisible = isVisible
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
     }
 }

@@ -1,4 +1,4 @@
-package com.giussepr.rxjava.ui.splash.home
+package com.giussepr.rxjava.ui.home
 
 import androidx.lifecycle.ViewModel
 

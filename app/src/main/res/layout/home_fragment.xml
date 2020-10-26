@@ -1,13 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.splash.home.HomeFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <data />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        tools:context=".ui.home.HomeFragment">
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/linearLayoutButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonIntroduction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Introduction" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDisposable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disposable" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCompositeDisposable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CompositeDisposable" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonOperators"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Operators" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonTypesOfObservable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Types of Observables" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subject" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bus" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRxBinding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RxBinding" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBackPressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Backpressure" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonHotAndCold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hot And Cold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
